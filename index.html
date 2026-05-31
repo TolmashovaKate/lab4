@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechShop — интернет-магазин электроники</title>
+    <title>Городская библиотека «Книжный дом»</title>
     <style>
         * {
             margin: 0;
@@ -14,10 +14,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #fcfaf5;
         }
         header {
-            background: #1e2a38;
-            color: #fff;
+            background: #3e2c1b;
+            color: #f5e7d3;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -30,27 +31,23 @@
             font-size: 1.5rem;
             font-weight: bold;
             text-decoration: none;
-            color: #fff;
+            color: #f5e7d3;
         }
         nav a {
-            color: #fff;
+            color: #f5e7d3;
             text-decoration: none;
             margin-left: 1.5rem;
             font-weight: 500;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #4fc3f7;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 2rem 1rem;
+            color: #d4a373;
         }
         .hero {
             text-align: center;
             padding: 3rem 1rem;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #e9d8c4 0%, #d4b48c 100%);
+            color: #2e2417;
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -61,30 +58,35 @@
             max-width: 600px;
             margin: 0 auto 1.5rem;
         }
-        .product-section {
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 2rem 1rem;
+        }
+        .book-section {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             margin-top: 2rem;
         }
-        .product-image {
+        .book-cover {
             flex: 1 1 300px;
         }
-        .product-image img {
+        .book-cover img {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        .product-details {
+        .book-details {
             flex: 1 1 300px;
         }
-        .product-details h2 {
+        .book-details h2 {
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
-        .price {
-            font-size: 2rem;
-            color: #e74c3c;
+        .availability {
+            font-size: 1.2rem;
+            color: #2a7f2a;
             font-weight: bold;
             margin: 1rem 0;
         }
@@ -98,14 +100,14 @@
             position: relative;
         }
         .specs li::before {
-            content: "⚡";
+            content: "📖";
             position: absolute;
             left: 0;
         }
         .btn {
             display: inline-block;
             padding: 0.8rem 1.8rem;
-            background: #27ae60;
+            background: #6b4c3a;
             color: #fff;
             border: none;
             border-radius: 8px;
@@ -115,13 +117,13 @@
             transition: background 0.3s, transform 0.1s;
         }
         .btn:hover {
-            background: #2ecc71;
+            background: #8b6b52;
             transform: translateY(-1px);
         }
         .btn:active {
             transform: translateY(0);
         }
-        .cart-message {
+        .booking-message {
             margin-top: 1rem;
             padding: 0.5rem;
             background: #d4edda;
@@ -129,13 +131,14 @@
             border-radius: 6px;
             display: none;
         }
-        .checkout {
-            margin-top: 3rem;
-            background: #f8f9fa;
+        .booking-form {
+            margin-top: 2rem;
+            background: #f8f4ee;
             border-radius: 12px;
             padding: 2rem;
+            display: none;
         }
-        .checkout h3 {
+        .booking-form h3 {
             margin-bottom: 1rem;
         }
         .form-group {
@@ -154,8 +157,8 @@
             font-size: 1rem;
         }
         .footer {
-            background: #1e2a38;
-            color: #ccc;
+            background: #3e2c1b;
+            color: #ccb69b;
             text-align: center;
             padding: 1.5rem;
             margin-top: 2rem;
@@ -174,70 +177,70 @@
     </style>
 </head>
 <body>
-    <!-- Шапка с навигацией -->
+    <!-- Шапка библиотеки -->
     <header>
-        <a href="#" class="logo">⚡ TechShop</a>
+        <a href="#" class="logo">📚 Книжный дом</a>
         <nav>
             <a href="#">Главная</a>
             <a href="#">Каталог</a>
-            <a href="#">Доставка</a>
+            <a href="#">Читателям</a>
             <a href="#contacts">Контакты</a>
         </nav>
     </header>
 
     <!-- Приветственный блок -->
     <section class="hero">
-        <h1>Ноутбуки для работы и учёбы</h1>
-        <p>Мощные и надёжные устройства с быстрой доставкой по всей России. Оформите заказ прямо сейчас!</p>
+        <h1>Добро пожаловать в городскую библиотеку</h1>
+        <p>Тысячи книг в бумажном и электронном виде. Бронируйте издания онлайн и забирайте в удобное время.</p>
     </section>
 
-    <!-- Основной контент: карточка товара -->
+    <!-- Карточка книги (пример для тестирования) -->
     <div class="container">
-        <div class="product-section" id="product">
-            <div class="product-image">
-                <!-- Заглушка изображения ноутбука -->
-                <img src="https://placehold.co/600x400/EEE/31343C?text=Dell+XPS+13" alt="Dell XPS 13">
+        <div class="book-section" id="book">
+            <div class="book-cover">
+                <!-- Заглушка обложки -->
+                <img src="https://placehold.co/600x800/D2B48C/2E2417?text=1984+Джордж+Оруэлл" alt="Обложка книги 1984">
             </div>
-            <div class="product-details">
-                <h2>Dell XPS 13</h2>
-                <div class="price">79 990 ₽</div>
+            <div class="book-details">
+                <h2>1984</h2>
+                <p><strong>Джордж Оруэлл</strong></p>
+                <div class="availability">✅ Доступна для бронирования (3 экз.)</div>
                 <ul class="specs">
-                    <li>Intel Core i7-1250U</li>
-                    <li>16 ГБ оперативной памяти</li>
-                    <li>SSD 512 ГБ</li>
-                    <li>13.4" FHD+ дисплей</li>
-                    <li>Windows 11 Pro</li>
+                    <li>Жанр: антиутопия, роман</li>
+                    <li>Год издания: 2021</li>
+                    <li>Объём: 320 страниц</li>
+                    <li>Издательство: «Эксмо»</li>
                 </ul>
-                <button class="btn" id="addToCartBtn">Добавить в корзину</button>
-                <div class="cart-message" id="cartMessage">✅ Товар добавлен в корзину!</div>
-                <!-- Скрытая кнопка, чтобы вызвать "яростные клики" при тестировании -->
+                <button class="btn" id="reserveBtn">Забронировать книгу</button>
+                <div class="booking-message" id="bookingMessage">📌 Книга забронирована! Заполните данные ниже.</div>
+                <!-- Скрытый некликабельный элемент (ловушка для rage clicks) -->
                 <div style="margin-top: 1rem; opacity: 0.6; font-size: 0.9rem; cursor: default;" 
-                     title="Эта кнопка не работает специально для теста">
-                    <span id="fakeBtn" style="border-bottom: 1px dashed #999;">Узнать о скидках</span>
+                     title="Этот раздел только для демонстрации">
+                    <span id="fakeLink" style="border-bottom: 1px dashed #999;">Получить читательский билет онлайн</span>
                 </div>
             </div>
         </div>
 
-        <!-- Блок оформления заказа (появляется после добавления в корзину) -->
-        <div class="checkout" id="checkoutSection" style="display: none;">
-            <h3>Оформление заказа</h3>
-            <form id="checkoutForm">
+        <!-- Форма для завершения бронирования (появляется после нажатия на кнопку) -->
+        <div class="booking-form" id="bookingForm">
+            <h3>Оформление бронирования</h3>
+            <form id="reserveForm">
                 <div class="form-group">
-                    <label for="name">ФИО</label>
-                    <input type="text" id="name" placeholder="Иван Иванов" required>
+                    <label for="fullname">ФИО</label>
+                    <input type="text" id="fullname" placeholder="Петрова Анна Сергеевна" required>
                 </div>
                 <div class="form-group">
-                    <label for="address">Адрес доставки</label>
-                    <input type="text" id="address" placeholder="г. Москва, ул. Тверская, д. 1, кв. 10" required>
+                    <label for="libraryBranch">Филиал библиотеки</label>
+                    <input type="text" id="libraryBranch" placeholder="Центральный, ул. Ленина, 10" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Телефон</label>
+                    <label for="phone">Контактный телефон</label>
                     <input type="tel" id="phone" placeholder="+7 (999) 123-45-67" required>
                 </div>
-                <button type="submit" class="btn">Продолжить оформление</button>
+                <button type="submit" class="btn">Подтвердить бронь</button>
             </form>
             <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                * Это демонстрационная форма. Настоящие платёжные данные не запрашиваются.
+                * Демонстрационная форма. Настоящие данные не запрашиваются.
             </p>
         </div>
     </div>
@@ -245,42 +248,41 @@
     <!-- Контакты -->
     <div class="container" id="contacts">
         <h2>Контакты</h2>
-        <p>📍 г. Москва, ул. Тверская, д. 1</p>
-        <p>📞 +7 (495) 123-45-67</p>
-        <p>✉️ info@techshop-demo.ru</p>
+        <p>📍 Центральный филиал: г. Москва, ул. Ленина, д. 10</p>
+        <p>📞 +7 (495) 987-65-43</p>
+        <p>✉️ info@knizhny-dom.ru</p>
+        <p>🕒 Часы работы: Пн–Пт 10:00–20:00, Сб 11:00–18:00</p>
     </div>
 
     <!-- Футер -->
     <footer class="footer">
-        <p>© 2026 TechShop — учебный проект для юзабилити-тестирования</p>
+        <p>© 2026 Городская библиотека «Книжный дом» — учебный проект для юзабилити-тестирования</p>
     </footer>
 
     <script>
-        // Простая логика корзины
-        const addToCartBtn = document.getElementById('addToCartBtn');
-        const cartMessage = document.getElementById('cartMessage');
-        const checkoutSection = document.getElementById('checkoutSection');
-        const fakeBtn = document.getElementById('fakeBtn');
+        // Логика бронирования
+        const reserveBtn = document.getElementById('reserveBtn');
+        const bookingMessage = document.getElementById('bookingMessage');
+        const bookingForm = document.getElementById('bookingForm');
+        const fakeLink = document.getElementById('fakeLink');
 
-        addToCartBtn.addEventListener('click', function() {
-            cartMessage.style.display = 'block';
-            checkoutSection.style.display = 'block';
-            // Прокрутка к оформлению
-            checkoutSection.scrollIntoView({ behavior: 'smooth' });
+        reserveBtn.addEventListener('click', function() {
+            bookingMessage.style.display = 'block';
+            bookingForm.style.display = 'block';
+            bookingForm.scrollIntoView({ behavior: 'smooth' });
         });
 
-        // Обработка формы оформления (без реальной отправки)
-        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+        // Обработка формы (без реальной отправки)
+        document.getElementById('reserveForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Спасибо! В реальном магазине вы бы перешли к оплате. Здесь тестирование завершено.');
-            // Можно сбросить форму
+            alert('Спасибо! Бронирование подтверждено. В реальной системе вам придёт уведомление. Здесь тестирование завершено.');
         });
 
-        // Имитация "некликабельного" элемента, который провоцирует rage clicks
-        fakeBtn.addEventListener('click', function(e) {
+        // Некликабельная «ссылка» для провокации rage clicks
+        fakeLink.addEventListener('click', function(e) {
             e.preventDefault();
-            // Ничего не делаем, но в Clarity это будет отмечено как мёртвый клик
-            console.log('Пользователь кликнул на некликабельную "ссылку"');
+            // Ничего не делает — в Clarity отобразится как «мёртвый клик»
+            console.log('Пользователь кликнул на некликабельную «ссылку»');
         });
     </script>
 
